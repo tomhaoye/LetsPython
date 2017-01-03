@@ -18,7 +18,7 @@ else:
 这是多行注释，使用双引号。
 """
 
-print 'aa';
+print 'aa'
 print 'aaa'
 
 '''
@@ -77,3 +77,102 @@ print dict[2]  # 输出键为 2 的值
 print tinydict  # 输出完整的字典
 print tinydict.keys()  # 输出所有键
 print tinydict.values()  # 输出所有值
+
+'''
+-------------------------------
+'''
+
+a = "Hello"
+b = "Python"
+
+print "a + b 输出结果：", a + b
+print "a * 2 输出结果：", a * 2
+print "a[1] 输出结果：", a[1]
+print "a[1:4] 输出结果：", a[1:4]
+
+if "H" in a:
+    print "H 在变量 a 中"
+else:
+    print "H 不在变量 a 中"
+
+if "M" not in a:
+    print "M 不在变量 a 中"
+else:
+    print "M 在变量 a 中"
+
+print r'\n'
+print R'\n'
+
+'''
+-------------------------------
+'''
+
+print "My name is %s and weight is %d kg!" % ('Zara', 21)
+
+'''
+-------------------------------
+'''
+
+import time  # 引入time模块
+
+ticks = time.time()
+print "当前时间戳为:", ticks
+
+localtime = time.localtime(time.time())
+print "本地时间为 :", localtime
+
+localtime = time.asctime(time.localtime(time.time()))
+print "本地时间为 :", localtime
+
+# 格式化成2016-03-20 11:45:39形式
+print time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+
+# 格式化成Sat Mar 28 22:24:24 2016形式
+print time.strftime("%a %b %d %H:%M:%S %Y", time.localtime())
+
+# 将格式字符串转换为时间戳
+a = "Sat Mar 28 22:24:24 2016"
+print time.mktime(time.strptime(a, "%a %b %d %H:%M:%S %Y"))
+
+'''
+-------------------------------
+'''
+
+import calendar
+
+cal = calendar.month(2016, 1)
+print "以下输出2016年1月份的日历:"
+print cal
+
+'''
+-------------------------------
+'''
+
+# 导入内置math模块
+import math
+
+content = dir(math)
+
+print content
+
+'''
+-------------------------------
+'''
+
+input_str = raw_input("请输入：")
+print "你输入的内容是: ", input_str
+
+'''
+-------------------------------
+'''
+
+
+class Networkerror(RuntimeError):
+    def __init__(self, arg):
+        self.args = arg
+
+
+try:
+    raise Networkerror("Bad hostname")
+except Networkerror, e:
+    print e.args
