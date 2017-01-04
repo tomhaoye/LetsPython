@@ -167,12 +167,12 @@ print "你输入的内容是: ", input_str
 '''
 
 
-class Networkerror(RuntimeError):
+class NetworkError(RuntimeError):
     def __init__(self, arg):
-        self.args = arg
+        self.param = arg
 
 
 try:
-    raise Networkerror("Bad hostname")
-except Networkerror, e:
-    print e.args
+    raise NetworkError("Bad hostname")
+except NetworkError, e:
+    print e.param
