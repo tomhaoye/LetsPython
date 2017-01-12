@@ -16,7 +16,10 @@ if __name__ == '__main__':
         while guess != i:
             if guess > i:
                 print 'please input a little smaller'
-                guess = int(raw_input('input your guess'))
+                guess = int(raw_input('input your guess:'))
+            else:
+                print 'please input a little bigger'
+                guess = int(raw_input('input your guess:'))
         end = time.clock()
         b = time.time()
         var = (end - start) / 18.2
